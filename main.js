@@ -23,5 +23,22 @@ document.querySelector("#save-btn").addEventListener("click", function(){
     const authorEntry = document.querySelector("#author").value;
     const isbnValue = document.querySelector("#isbnNumber").value;
 
-    console.log(titleEntry, authorEntry, isbnValue)
+    // console.log(titleEntry, authorEntry, isbnValue)
+
+    //build into an object
+    var newBookObject = {
+      title: titleEntry,
+      author: authorEntry,
+      ISBN: isbnValue  
+    };
+
+    // console.log(newBookObject);
+//post to json file
+    fetch("http://localhost:3000/books", { // Replace "url" with your API's URL
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newBookObject)
 })
+});
