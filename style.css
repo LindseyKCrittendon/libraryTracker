@@ -25,3 +25,13 @@ body{
     color: #312f17;
     text-shadow: 3px 3px 5px #e5bd3f;  
  }
+
+ .single-entry{
+    border: inset 4px #e5b256;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    color:#312f17;
+    text-shadow: 3px 3px 5px #e5bd3f;
+    background-image: url("https://i.pinimg.com/originals/ab/d6/f7/abd6f794ab342a041c3ab346f1607773.jpg");
+ }
