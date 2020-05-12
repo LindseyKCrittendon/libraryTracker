@@ -1,0 +1,27 @@
+div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+input {
+    flex-direction: column;
+    display: flex;
+    padding: 1em;
+    margin: 5px;
+    background-color: #f7f3f2;
+   color:#e5bd3f;
+   text-shadow: 2px 2px 5px #000000;
+   border: inset 4px #e5b256;
+}
+
+body{
+    background-image: url("https://i.pinimg.com/originals/59/f9/b2/59f9b2ccf585d1206c6c6768fbdedfe6.jpg") ;
+    background-size: 100%;
+ }
+
+ h1{
+    color: #312f17;
+    text-shadow: 3px 3px 5px #e5bd3f;  
+ }
