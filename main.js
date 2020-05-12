@@ -1,3 +1,5 @@
+//fetched data from json and printed to dom
+
 fetch("http://localhost:3000/books")
   .then((books) => books.json())
   .then((parsedBooks) => {
@@ -11,4 +13,15 @@ fetch("http://localhost:3000/books")
        </section>`;
        document.querySelector(".bookContainer").innerHTML += htmlString;
    }) 
+});
+
+//add event listener to save button on form
+
+document.querySelector("#save-btn").addEventListener("click", function(){
+    // console.log("you clicked meeeeeee!")
+    const titleEntry = document.querySelector("#title").value;
+    const authorEntry = document.querySelector("#author").value;
+    const isbnValue = document.querySelector("#isbnNumber").value;
+
+    console.log(titleEntry, authorEntry, isbnValue)
 })

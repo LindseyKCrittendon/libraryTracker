@@ -11,7 +11,7 @@ input {
     padding: 1em;
     margin: 5px;
     background-color: #f7f3f2;
-   color:#e5bd3f;
+   /* color:#e5bd3f; */
    text-shadow: 2px 2px 5px #000000;
    border: inset 4px #e5b256;
 }
