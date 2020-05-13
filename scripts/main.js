@@ -1,3 +1,7 @@
+import addEventListenerObject from "./eventListeners.js"
+import eventListeners from "./eventListeners.js";
+
+
 //fetched data from json and printed to dom
 
 fetch("http://localhost:3000/books")
@@ -13,32 +17,24 @@ fetch("http://localhost:3000/books")
        </section>`;
        document.querySelector(".bookContainer").innerHTML += htmlString;
    }) 
-});
+})
 
 //add event listener to save button on form
 
-document.querySelector("#save-btn").addEventListener("click", function(){
-    // console.log("you clicked meeeeeee!")
-    const titleEntry = document.querySelector("#title").value;
-    const authorEntry = document.querySelector("#author").value;
-    const isbnValue = document.querySelector("#isbnNumber").value;
+document.querySelector("#save-btn").addEventListener("click", eventListeners.saveBookEvent)
 
     // console.log(titleEntry, authorEntry, isbnValue)
 
     //build into an object
-    var newBookObject = {
-      title: titleEntry,
-      author: authorEntry,
-      ISBN: isbnValue  
-    };
+    
 
     // console.log(newBookObject);
 //post to json file
-    fetch("http://localhost:3000/books", { // Replace "url" with your API's URL
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newBookObject)
-})
-});
+   
+
+
+
+
+
+
+
