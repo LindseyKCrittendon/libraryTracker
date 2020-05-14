@@ -36,8 +36,8 @@ const eventListeners = {
                        <h2>${bookObject.title}</h2>
                        <p>by ${bookObject.author}</p>
                        <p>ISBN: ${bookObject.ISBN}</p>
-                       <button class="delete-btn" id="delete-btn-">Delete</button>
-                       <button class="edit-btn" id="edit-btn-">Edit</button>
+                       <button class="delete-btn" id="delete-btn-${bookObject.id}">Delete</button>
+                       <button class="edit-btn" id="edit-btn-${bookObject.id}">Edit</button>
                        </section>`;
                        document.querySelector(".bookContainer").innerHTML += htmlString;
                    })
@@ -45,6 +45,11 @@ const eventListeners = {
           })
     }
     
+},
+{
+    deleteBookEvent: function (){
+        
+    }
 }
 
 

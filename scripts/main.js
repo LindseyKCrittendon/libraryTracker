@@ -14,8 +14,8 @@ fetch("http://localhost:3000/books")
        <h2>${bookObject.title}</h2>
        <p>by ${bookObject.author}</p>
        <p>ISBN: ${bookObject.ISBN}</p>
-       <button class="delete-btn" id="delete-btn-1">Delete</button>
-      <button class="edit-btn" id="edit-btn-1">Edit</button>
+       <button class="delete-btn-1" id="delete-btn-${bookObject.id}">Delete</button>
+      <button class="edit-btn" id="edit-btn-${bookObject.id}">Edit</button>
        </section>`;
       document.querySelector(".bookContainer").innerHTML += htmlString;
     })
@@ -29,6 +29,7 @@ document.querySelector("body").addEventListener("click", () => {
   if (event.target.id.includes("delete-btn")) {
 
     const idToDelete = event.target.id.split("-")[2]
+    console.log(idToDelete)
     fetch(`http://localhost:3000/books/${idToDelete}`, {
       method: "DELETE"
     }).then(() => {
@@ -42,8 +43,8 @@ document.querySelector("body").addEventListener("click", () => {
       <h2>${bookObject.title}</h2>
       <p>by ${bookObject.author}</p>
       <p>ISBN: ${bookObject.ISBN}</p>
-      <button class="delete-btn" id="delete-btn-${idToDelete}">Delete</button>
-      <button class="edit-btn" id="edit-btn-${idToDelete}">Edit</button>
+      <button class="delete-btn" id="delete-btn-${bookObject.id}">Delete</button>
+      <button class="edit-btn" id="edit-btn-${bookObject.id}">Edit</button>
       </section>`;
             document.querySelector(".bookContainer").innerHTML += htmlString;
 
@@ -53,9 +54,7 @@ document.querySelector("body").addEventListener("click", () => {
   }
 })
 
-  // console.log(event.target.id);
-  // console.log(event.target.id.split("-"));
-  // console.log(event.target.id.split("-")[2]);
+ 
 
 
 
