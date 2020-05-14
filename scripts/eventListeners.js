@@ -1,18 +1,15 @@
-
+//refactor to make a new book object
+const buildBookObjectFromForm = () => {
+    return{
+    title: document.querySelector("#title").value,
+    author: document.querySelector("#author").value,
+    ISBN: document.querySelector("#isbnNumber").value
+}
+}
 
 const eventListeners = {
-    saveBookEvent: function(){
-            // console.log("you clicked meeeeeee!")
-            const titleEntry = document.querySelector("#title").value;
-            const authorEntry = document.querySelector("#author").value;
-            const isbnValue = document.querySelector("#isbnNumber").value; 
-
-            var newBookObject = {
-                title: titleEntry,
-                author: authorEntry,
-                ISBN: isbnValue  
-              };
-
+    saveBookEvent: () => {
+        const newBookObject = buildBookObjectFromForm();
               //posting to json
               fetch("http://localhost:3000/books", { // Replace "url" with your API's URL
               method: "POST",
@@ -45,12 +42,31 @@ const eventListeners = {
           })
     }
     
-},
-{
-    deleteBookEvent: function (){
-        
-    }
 }
+// {
+    // deleteBookEvent: (event) => {
+    //     if (event.target.id.includes("delete-btn")) {
+
+    //         const idToDelete = event.target.id.split("-")[2]
+    //         console.log(idToDelete)
+    //         fetch(`http://localhost:3000/books/${idToDelete}`, {
+    //           method: "DELETE"
+    //         }).then(() => {
+    //           fetch("http://localhost:3000/books")
+    //             .then(books => books.json())
+    //             .then((parsedBooks) => {
+    //               document.querySelector(".bookContainer").innerHTML = "";
+    //               parsedBooks.forEach((bookObject) => {
+    //                 const htmlString =
+    //                   `<section class ="single-entry">
+    //           <h2>${bookObject.title}</h2>
+    //           <p>by ${bookObject.author}</p>
+    //           <p>ISBN: ${bookObject.ISBN}</p>
+    //           <button class="delete-btn" id="delete-btn-${bookObject.id}">Delete</button>
+    //           <button class="edit-btn" id="edit-btn-${bookObject.id}">Edit</button>
+    //           </section>`;
+    //                 document.querySelector(".bookContainer").innerHTML += htmlString;
+    // }
 
 
 
